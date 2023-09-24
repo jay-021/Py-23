@@ -18,18 +18,17 @@ def main():
             print("Sorry, we don't have that color yet so choose deferent color")
     
     total_price = items[item_select] + colors[color_select]
-
+    print(f"Your total price before discount is {total_price}, \n {item_select} cost you {items[item_select]}. \n {color_select} this color cost{colors[color_select]}")
     if name not in ["rinku", "rinkal", "rinkli", "rinkali"]:
         discount = int(input("How much discount do you want: "))
         if discount >= 100:
             print("100% discount is only available for Rinku.")
             print(f"Your total price is: {total_price}.")
         else:
-            print(f"Your total price is: {total_price}.")
+            print(f"Your total price is: {total_price - (total_price*(discount/100))}.")
     else: 
         print("Everything is free for you babe")
         print(f"Your total price is: $ 00.")
-
-                    
+                            
 if __name__ == "__main__":
     main()
